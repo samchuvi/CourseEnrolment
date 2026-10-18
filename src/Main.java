@@ -83,5 +83,10 @@ public class Main {
 
         System.out.println("     IUEA STUDENT ENROLMENT TRACKING SYSTEM");
         System.out.println("============================================\n");
+
+        // Creating three Course objects - each gets its OWN instance variables
+        Course c1 = new Course("Java Programming (BIT2115)", 60, 54, 45);
+        Course c2 = new Course("Database Systems", 45, 38, 30);
+        Course c3 = new Course("Computer Networks", 50, 40, 22);
     }
 }
