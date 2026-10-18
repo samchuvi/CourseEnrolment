@@ -23,6 +23,19 @@ class Course {
         totalStudents += studentsRegistered;
         totalCourses++;
     }
+
+    // Static method: displays university-wide statistics (uses only static variables)
+    static void displayUniversityStats() {
+        // LOCAL VARIABLE inside a static method
+        double averagePerCourse = (double) totalStudents / totalCourses;
+
+        System.out.println("========== " + universityName
+                + " UNIVERSITY-WIDE STATISTICS ==========");
+        System.out.println("Total Courses               : " + totalCourses);
+        System.out.println("Total Students (all courses): " + totalStudents);
+        System.out.printf ("Average Students per Course : %.2f%n", averagePerCourse);
+        System.out.println("=====================================================");
+    }
 }
 
 public class Main {
