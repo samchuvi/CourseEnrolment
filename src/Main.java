@@ -31,6 +31,38 @@ class Course {
         return attendanceRate;
     }
 
+    // Temporary calculation: pass percentage
+    double calculatePassRate() {
+        // LOCAL VARIABLE used for a temporary calculation
+        double passRate = (studentsPassed * 100.0) / studentsRegistered;
+        return passRate;
+    }
+
+    // Displays statistics for this individual course
+    void displayCourseStats() {
+        // LOCAL VARIABLES: created when the method is called, destroyed when it ends
+        double attendance = calculateAttendance();
+        double passRate = calculatePassRate();
+        String remark;
+
+        if (passRate >= 70) {
+            remark = "Excellent performance";
+        } else if (passRate >= 50) {
+            remark = "Good performance";
+        } else {
+            remark = "Needs improvement";
+        }
+
+        System.out.println("Course Name        : " + courseName);
+        System.out.println("Students Registered: " + studentsRegistered);
+        System.out.println("Students Attended  : " + studentsAttended);
+        System.out.println("Students Passed    : " + studentsPassed);
+        System.out.printf ("Attendance Rate    : %.2f%%%n", attendance);
+        System.out.printf ("Pass Rate          : %.2f%%%n", passRate);
+        System.out.println("Remark             : " + remark);
+        System.out.println("--------------------------------------------");
+    }
+
     // Static method: displays university-wide statistics (uses only static variables)
     static void displayUniversityStats() {
         // LOCAL VARIABLE inside a static method
