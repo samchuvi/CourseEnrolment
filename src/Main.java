@@ -110,5 +110,28 @@ public class Main {
         // ---- University-wide statistics (static) ----
         System.out.println();
         Course.displayUniversityStats();
+
+        // ---- Showing how the variable types behave ----
+        System.out.println("\n>>> DEMONSTRATING VARIABLE BEHAVIOUR\n");
+        System.out.println("Registering 10 new students into " + c2.courseName + "...");
+        c2.registerStudents(10);
+
+        System.out.println("\nInstance variables (each object keeps its own value):");
+        System.out.println("  c1 students = " + c1.studentsRegistered + "  (unchanged)");
+        System.out.println("  c2 students = " + c2.studentsRegistered + "  (changed)");
+        System.out.println("  c3 students = " + c3.studentsRegistered + "  (unchanged)");
+
+        System.out.println("\nStatic variable (one shared copy for all objects):");
+        System.out.println("  c1.totalStudents = " + c1.totalStudents);
+        System.out.println("  c2.totalStudents = " + c2.totalStudents);
+        System.out.println("  c3.totalStudents = " + c3.totalStudents);
+        System.out.println("  Course.totalStudents = " + Course.totalStudents);
+
+        System.out.println("\nLocal variables (attendance, passRate, remark, oldCount)");
+        System.out.println("existed only while their methods were running and");
+        System.out.println("cannot be accessed here in main().\n");
+
+        // Updated university statistics after the change
+        Course.displayUniversityStats();
     }
 }
