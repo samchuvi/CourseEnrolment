@@ -88,5 +88,15 @@ public class Main {
         Course c1 = new Course("Java Programming (BIT2115)", 60, 54, 45);
         Course c2 = new Course("Database Systems", 45, 38, 30);
         Course c3 = new Course("Computer Networks", 50, 40, 22);
+
+        // ---- Individual course statistics ----
+        System.out.println(">>> INDIVIDUAL COURSE STATISTICS\n");
+        c1.displayCourseStats();
+        c2.displayCourseStats();
+        c3.displayCourseStats();
+
+        // ---- University-wide statistics (static) ----
+        System.out.println();
+        Course.displayUniversityStats();
     }
 }
