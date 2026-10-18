@@ -1,5 +1,10 @@
 class Course {
 
+    // ===== STATIC VARIABLES (shared across all Course objects) =====
+    static int totalStudents = 0;          // total students in all courses combined
+    static int totalCourses = 0;           // how many course objects have been created
+    static String universityName = "IUEA";
+
     // ===== INSTANCE VARIABLES (unique to each Course object) =====
     String courseName;
     int studentsRegistered;
@@ -13,6 +18,10 @@ class Course {
         this.studentsRegistered = studentsRegistered;
         this.studentsAttended = studentsAttended;
         this.studentsPassed = studentsPassed;
+
+        // update the shared (static) variables every time a new course is created
+        totalStudents += studentsRegistered;
+        totalCourses++;
     }
 }
 
