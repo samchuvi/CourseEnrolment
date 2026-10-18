@@ -24,6 +24,18 @@ class Course {
         totalCourses++;
     }
 
+    // Registers more students into THIS course only
+    void registerStudents(int newStudents) {
+        // LOCAL VARIABLE: only exists inside this method
+        int oldCount = studentsRegistered;
+
+        studentsRegistered += newStudents;   // changes only this object's copy
+        totalStudents += newStudents;        // changes the shared total for everyone
+
+        System.out.println(newStudents + " student(s) added to " + courseName
+                + " (" + oldCount + " -> " + studentsRegistered + ")");
+    }
+
     // Temporary calculation: attendance percentage
     double calculateAttendance() {
         // LOCAL VARIABLE used for a temporary calculation
