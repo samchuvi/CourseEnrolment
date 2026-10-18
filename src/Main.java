@@ -24,6 +24,13 @@ class Course {
         totalCourses++;
     }
 
+    // Temporary calculation: attendance percentage
+    double calculateAttendance() {
+        // LOCAL VARIABLE used for a temporary calculation
+        double attendanceRate = (studentsAttended * 100.0) / studentsRegistered;
+        return attendanceRate;
+    }
+
     // Static method: displays university-wide statistics (uses only static variables)
     static void displayUniversityStats() {
         // LOCAL VARIABLE inside a static method
